@@ -107,7 +107,8 @@
         function doCreate(){
             tree = getTreeFromForm()
             host = window.location.origin
-            //console.log(tree)
+            console.log(tree)
+            console.log(host)
             $.ajax({
                 url: host+"/trees",
                 data: JSON.stringify(tree),
