@@ -24,7 +24,7 @@ def getAll():
     return jsonify(treeDao.getAll())
 
 # Gets tree specified by id.
-@app.route('/trees/<int:tree_id>')
+@app.route('/trees/<int:id>')
 def findById(tree_id):
     return jsonify(treeDao.findByID(tree_id))
 
@@ -46,7 +46,7 @@ def create():
 
 # Updates record by id.
 # curl -X PUT -d "{\"english_name\" : \"test\", \"irish_name\": \"test\", \"scientific_name\" : \"test\"}" -H Content-Type:application/json http://127.0.0.1:5000/trees/1001
-@app.route('/trees/<int:tree_id>', methods = ['PUT'])
+@app.route('/trees/<int:id>', methods = ['PUT'])
 def update(tree_id):
     foundTree = treeDao.findByID(tree_id)
     # print(foundTree)
@@ -65,7 +65,7 @@ def update(tree_id):
 
 # Delete record by tree_id. 
 # curl -X DELETE http://127.0.0.1:5000/trees/1003
-@app.route('/trees/<int:tree_id>', methods = ['DELETE'])
+@app.route('/trees/<int:id>', methods = ['DELETE'])
 def delete(tree_id):
     foundTree = treeDao.findByID(tree_id)
     

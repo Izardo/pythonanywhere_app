@@ -12,7 +12,7 @@ class treeDao:
     def __init__(self):
         self.db = mysql.connector.connect(
             host = cfg.mysql['host'], 
-            user = cfg.mysql['user'], 
+            user = cfg.mysql['username'], 
             password = cfg.mysql['password'],
             database = cfg.mysql['database']
         )
