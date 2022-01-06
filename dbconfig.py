@@ -1,6 +1,6 @@
 mysql = {
     'host' : 'izzymcizzface.mysql.pythonanywhere-services.com',
-    'username' : 'izzymcizzface',
+    'user' : 'izzymcizzface',
     'password' : 'wendy567',
     'database' : 'izzymcizzface$native_irish_trees', 
 }
