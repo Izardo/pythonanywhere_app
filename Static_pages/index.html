@@ -106,6 +106,7 @@
         // Creates tree record on database.
         function doCreate(){
             tree = getTreeFromForm()
+            host = window.location.origin
             //console.log(tree)
             $.ajax({
                 url: host+"/trees",
@@ -123,7 +124,7 @@
                     console.log("error"+error)
                 }
             }) 
-        }
+        };
         // Calls functions to update tree record on server and database. 
         function doUpdate(){
             tree = getTreeFromForm()
@@ -136,6 +137,7 @@
             var rowElement = thisElem.parentNode.parentNode;
             var index = rowElement.rowIndex;
             tree_id = rowElement.getAttribute("id");
+            host = window.location.origin
             $.ajax({
                 url: host+"/trees/"+tree_id,
                 method: "DELETE",
@@ -161,7 +163,8 @@
         // Updates tree record in database.
         function updateServer(tree){
             //console.log(JSON.stringify(tree));
-           $.ajax({
+            host = window.location.origin
+            $.ajax({
                 url: host+"/trees/"+tree.tree_id,
                 data: JSON.stringify(tree),
                 method: "PUT",
@@ -187,7 +190,8 @@
         }
         // Gets all records from database and adds to table on server.
         function populateTable(){
-           $.ajax({
+            host = window.location.origin
+            $.ajax({
                url: host+'/trees',
                method: 'GET',
                datatype: 'JSON',
