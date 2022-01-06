@@ -169,7 +169,7 @@
                 data: JSON.stringify(tree),
                 method: "PUT",
                 dataType: "JSON",
-                contentType: "application/json; charset=iso-8859-1", // Use iso-8859-1 charset to deal with fada in Irish language
+                contentType: "application/json; charset=utf-8", // Use iso-8859-1 charset to deal with fada in Irish language
                 success: function (result) {
                     console.log(result)
                     updateTableRow(tree)
